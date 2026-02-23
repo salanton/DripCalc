@@ -53,6 +53,7 @@ const pwa = VitePWA({
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/DripCalc/',
   plugins: [react(), pwa],
   server: {
     host: '0.0.0.0', // Доступ по IP адресу
