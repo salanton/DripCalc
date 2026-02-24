@@ -6,7 +6,7 @@ export const STORAGE_KEY = 'dripcalc:params:v2'
 export const PARAM_LIMITS = {
   lightHours: { min: 12, max: 24 },
   plantCount: { min: 1, max: 20 },
-  dripRateLph: { min: 0.1, max: 10 },
+  dripRateLph: { min: 0.1, max: 12 },
   dripCount: { min: 1, max: 10 },
   tankVolumeLiters: { min: 1, max: 50 },
   dailyConsumptionLiters: { min: 0.1, max: 30 },

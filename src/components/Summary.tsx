@@ -10,7 +10,7 @@ const Summary = ({ entries }: Props) => {
   }
 
   return (
-    <section className="summary">
+  <section className="summary">
       <div className="summary__schedule">
         {entries.map((entry, index) => (
           <span key={entry.absoluteMinutes + index} className="summary__time">
@@ -18,9 +18,9 @@ const Summary = ({ entries }: Props) => {
             {entry.label}
           </span>
         ))}
-      </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 }
 
 export default Summary

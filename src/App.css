@@ -498,25 +498,68 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .schedule-table {
   margin-top: 0.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  justify-content: center;
+}
+
+.schedule-table__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 0;
+}
+
+.schedule-table__head,
+.schedule-table__row {
+  display: grid;
+  align-items: center;
+}
+
+.schedule-table__head > div,
+.schedule-table__row > div,
+.schedule-table__footer > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.schedule-table__head > div[role="columnheader"]:nth-child(2),
+.schedule-table__row > div[role="cell"]:nth-child(2) {
+  justify-content: center;
+  text-align: center;
 }
 
 .schedule-table__head,
 .schedule-table__row,
 .schedule-table__footer {
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
-  gap: 0.5rem;
-  padding: 0.65rem 0.5rem;
+  grid-template-columns: minmax(40px, auto) 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  align-items: center;
 }
 
 .schedule-table--no-per-plant .schedule-table__head,
 .schedule-table--no-per-plant .schedule-table__row,
 .schedule-table--no-per-plant .schedule-table__footer {
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: minmax(40px, auto) 1fr 1fr;
 }
 
 .schedule-table__head {
@@ -527,7 +570,7 @@
 .schedule-table--time-only .schedule-table__head,
 .schedule-table--time-only .schedule-table__row,
 .schedule-table--time-only .schedule-table__footer {
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(40px, auto) 1fr;
 }
 
 .schedule-table__row:nth-child(odd) {
@@ -541,23 +584,35 @@
   margin-top: 0.4rem;
 }
 
-.schedule-table__footer-label {
-  text-align: left;
-  padding-left: 0;
-}
-
-.schedule-table__head > div[role="columnheader"]:nth-child(2) {
-  padding-left: 0;
-  margin-left: 0;
+.schedule-table__footer-spacer {
+  /* Занимает такое же пространство, как колонка с номером */
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .schedule-table__footer-label {
-  padding-left: 0;
-  margin-left: 0;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .schedule-table__footer-value {
-  font-size: 1.1rem;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.schedule-table__head > div[role="columnheader"]:nth-child(2) {
+  justify-content: center;
+  text-align: center;
 }
 
 .schedule-table__volume {
@@ -612,20 +667,20 @@
   .schedule-table__head,
   .schedule-table__row,
   .schedule-table__footer {
-    grid-template-columns: auto 1fr 1fr 1fr;
+    grid-template-columns: minmax(40px, auto) 1fr 1fr 1fr;
     font-size: 0.95rem;
   }
 
   .schedule-table--time-only .schedule-table__head,
   .schedule-table--time-only .schedule-table__row,
   .schedule-table--time-only .schedule-table__footer {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(40px, auto) 1fr;
   }
 
   .schedule-table--no-per-plant .schedule-table__head,
   .schedule-table--no-per-plant .schedule-table__row,
   .schedule-table--no-per-plant .schedule-table__footer {
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: minmax(40px, auto) 1fr 1fr;
   }
 
   .stepper__controls {

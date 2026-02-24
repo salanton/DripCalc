@@ -72,7 +72,7 @@ const ScheduleTable = ({ entries, volumes, params, windowStart, windowEnd, daily
         </div>
         {showVolumes ? (
           <div className="schedule-table__footer" role="row">
-            <div role="cell"></div>
+            <div role="cell" className="schedule-table__footer-spacer"></div>
             <div role="cell" className="schedule-table__footer-label">За день</div>
             <div role="cell" className="schedule-table__footer-value">{formatLiters(params.showCompensatedDripsCard ? volumes.dailyTotal : dailyConsumptionLiters)}</div>
             {showPerPlant ? <div role="cell" className="schedule-table__footer-value">{formatLiters(volumes.dailyPerPlant)}</div> : null}
