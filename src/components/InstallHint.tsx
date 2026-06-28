@@ -1,16 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const STORAGE_KEY = 'dripcalc:install-hint-dismissed'
 
 const InstallHint = () => {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const dismissed = localStorage.getItem(STORAGE_KEY)
-    if (!dismissed) {
-      setVisible(true)
-    }
-  }, [])
+  const [visible, setVisible] = useState(() => !localStorage.getItem(STORAGE_KEY))
 
   const handleClose = () => {
     localStorage.setItem(STORAGE_KEY, '1')

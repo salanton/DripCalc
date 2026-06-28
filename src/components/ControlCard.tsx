@@ -1,4 +1,11 @@
+import clsx from 'clsx'
 import type { PropsWithChildren, ReactNode } from 'react'
+import {
+  getBentoBalanceClassName,
+  getBentoItemClassName,
+  type BentoBalance,
+  type BentoSpan,
+} from './bento'
 
 type Props = PropsWithChildren<{
   title: string
@@ -6,10 +13,28 @@ type Props = PropsWithChildren<{
   aside?: ReactNode
   className?: string
   bodyClassName?: string
+  bentoBalance?: BentoBalance | BentoBalance[]
+  bentoSpan?: BentoSpan
 }>
 
-const ControlCard = ({ title, description, aside, className, bodyClassName, children }: Props) => (
-  <section className={`control-card${className ? ` ${className}` : ''}`}>
+const ControlCard = ({
+  title,
+  description,
+  aside,
+  className,
+  bodyClassName,
+  bentoBalance,
+  bentoSpan,
+  children,
+}: Props) => (
+  <section
+    className={clsx(
+      'control-card',
+      getBentoItemClassName(bentoSpan),
+      getBentoBalanceClassName(bentoBalance),
+      className,
+    )}
+  >
     <header className="control-card__header">
       <div>
         <div className="control-card__title">{title}</div>
@@ -17,7 +42,7 @@ const ControlCard = ({ title, description, aside, className, bodyClassName, chil
       </div>
       {aside ? <div className="control-card__aside">{aside}</div> : null}
     </header>
-    <div className={`control-card__body${bodyClassName ? ` ${bodyClassName}` : ''}`}>{children}</div>
+    <div className={clsx('control-card__body', bodyClassName)}>{children}</div>
   </section>
 )
 

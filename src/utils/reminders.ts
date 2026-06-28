@@ -102,7 +102,7 @@ export function tryOpenRemindersApp(title: string, date: Date): boolean {
     }, 1000)
     
     return true
-  } catch (e) {
+  } catch {
     return false
   }
 }

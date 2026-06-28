@@ -198,6 +198,7 @@ function App() {
           {params.showCompensatedDripsCard ? (
             <ControlCard
               className="control-card--drips"
+              bentoSpan="desktop-full"
               title="Компенсированые капельници"
               description="Параметры системы"
             >
@@ -237,6 +238,7 @@ function App() {
           {params.showTankCard ? (
             <ControlCard
               className="control-card--tank"
+              bentoSpan="desktop-full"
               title="Обьем бака"
               description="Расчет до следующего наполнения"
               bodyClassName="control-card--tank__body"
